@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Time: 11:27 PM
  */
 @RestController
-public class HelloController {
+public class TestController {
     @Value("${message}")
     private String message;
     @Value("${name}")
