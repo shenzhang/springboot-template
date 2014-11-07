@@ -44,9 +44,10 @@ configurations {
 dependencies {
     compile(
             'org.springframework.boot:spring-boot-starter-web',
-            'org.springframework.security:spring-security-web:3.2.5.RELEASE',
-            'org.springframework.security:spring-security-config:3.2.5.RELEASE',
-            'org.springframework:spring-jdbc:4.0.7.RELEASE',
+            'org.springframework.boot:spring-boot-starter-jdbc',
+
+//            'org.springframework.security:spring-security-web:3.2.5.RELEASE',
+//            'org.springframework.security:spring-security-config:3.2.5.RELEASE',
 
             'postgresql:postgresql:9.1-901.jdbc4',
 
