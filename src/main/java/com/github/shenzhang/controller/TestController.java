@@ -21,12 +21,12 @@ public class TestController {
     private TestService testService;
 
     @RequestMapping("/")
-    String home() {
+    public String home() {
         return message + " " + name;
     }
 
     @RequestMapping("/jdbc")
-    int jdbc() {
+    public int jdbc() {
         return testService.getUserCount();
     }
 }
