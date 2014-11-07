@@ -1,0 +1,67 @@
+// more details about springboot gradle plugin see:
+// http://docs.spring.io/autorepo/docs/spring-boot/1.2.0.BUILD-SNAPSHOT/reference/html/build-tool-plugins-gradle-plugin.html
+
+apply plugin: 'spring-boot'
+apply plugin: 'war'
+
+jar {
+    baseName = 'myproject'
+    version = '0.0.1-SNAPSHOT'
+}
+
+buildscript {
+    repositories {
+        maven { url 'http://127.0.0.1:8081/nexus/content/groups/public' }
+        jcenter()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.8.RELEASE")
+    }
+}
+
+allprojects {
+    apply plugin: 'idea'
+    apply plugin: 'java'
+
+    repositories {
+        maven { url 'http://127.0.0.1:8081/nexus/content/groups/public' }
+        jcenter()
+    }
+
+    idea {
+        project {
+            jdkName = '1.8'
+            languageLevel = '1.8'
+        }
+    }
+}
+
+configurations {
+    providedRuntime
+}
+
+dependencies {
+    compile(
+            'org.springframework.boot:spring-boot-starter-web',
+            'org.springframework.security:spring-security-web:3.2.5.RELEASE',
+            'org.springframework.security:spring-security-config:3.2.5.RELEASE',
+            'org.springframework:spring-jdbc:4.0.7.RELEASE',
+
+            'postgresql:postgresql:9.1-901.jdbc4',
+
+            'com.google.guava:guava:15.0'
+    )
+
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+
+    testCompile(
+            'junit:junit:4.11',
+            'org.springframework.boot:spring-boot-starter-test'
+    )
+}
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.10'
+}
