@@ -12,18 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
  * Time: 11:27 PM
  */
 @RestController
-public class TestController {
+public class JsonController {
     @Value("${message}")
     private String message;
     @Value("${name}")
     private String name;
     @Autowired
     private TestService testService;
-
-    @RequestMapping("/")
-    public String home() {
-        return message + " " + name;
-    }
 
     @RequestMapping("/jdbc")
     public int jdbc() {
