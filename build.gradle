@@ -2,7 +2,7 @@
 // http://docs.spring.io/autorepo/docs/spring-boot/1.2.0.BUILD-SNAPSHOT/reference/html/build-tool-plugins-gradle-plugin.html
 
 apply plugin: 'spring-boot'
-apply plugin: 'war'
+//apply plugin: 'war'      // if you want to package this project into a war file and deploy it to a external web container, please uncomment it.
 
 jar {
     baseName = 'myproject'
