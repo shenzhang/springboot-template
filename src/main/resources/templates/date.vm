@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Velocity Dynamic Page</title>
+</head>
+<body>
+Current time is: $date
+</body>
+
+</html>

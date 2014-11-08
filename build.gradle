@@ -45,11 +45,10 @@ dependencies {
     compile(
             'org.springframework.boot:spring-boot-starter-web',
             'org.springframework.boot:spring-boot-starter-jdbc',
+            'org.springframework.boot:spring-boot-starter-velocity',
 
 //            'org.springframework.security:spring-security-web:3.2.5.RELEASE',
 //            'org.springframework.security:spring-security-config:3.2.5.RELEASE',
-
-            'org.apache.velocity:velocity:1.7',
 
             'postgresql:postgresql:9.1-901.jdbc4',
 
