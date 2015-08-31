@@ -7,7 +7,6 @@ import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomi
 import org.springframework.boot.context.embedded.EmbeddedServletContainerFactory;
 import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.util.FileCopyUtils;
 
@@ -20,7 +19,8 @@ import java.io.IOException;
  * Date: 11/7/14
  * Time: 2:11 PM
  */
-@Configuration
+
+//@Configuration
 public class ContainerConfiguration implements EmbeddedServletContainerCustomizer {
     @Override
     public void customize(ConfigurableEmbeddedServletContainer container) {

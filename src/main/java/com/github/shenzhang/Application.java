@@ -2,11 +2,10 @@ package com.github.shenzhang;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 
 /**
@@ -15,9 +14,8 @@ import org.springframework.core.env.Environment;
  * Time: 2:13 PM
  */
 
-@Configuration
 @ComponentScan
-@EnableAutoConfiguration
+@SpringBootApplication
 public class Application extends SpringBootServletInitializer {
     @Autowired
     private Environment environment;

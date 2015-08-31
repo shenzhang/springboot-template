@@ -16,7 +16,7 @@ buildscript {
     }
 
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.8.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.5.RELEASE")
     }
 }
 
@@ -44,18 +44,16 @@ configurations {
 dependencies {
     compile(
             'org.springframework.boot:spring-boot-starter-web',
+            'org.springframework.boot:spring-boot-starter-actuator',
             'org.springframework.boot:spring-boot-starter-jdbc',
             'org.springframework.boot:spring-boot-starter-velocity',
 
-//            'org.springframework.security:spring-security-web:3.2.5.RELEASE',
-//            'org.springframework.security:spring-security-config:3.2.5.RELEASE',
-
             'postgresql:postgresql:9.1-901.jdbc4',
 
-            'com.google.guava:guava:15.0'
+            'com.google.guava:guava:18.0'
     )
 
-    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+//    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 
     testCompile(
             'junit:junit:4.11',
@@ -72,5 +70,5 @@ idea.project.ipr {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.0'
+    gradleVersion = '2.6'
 }
