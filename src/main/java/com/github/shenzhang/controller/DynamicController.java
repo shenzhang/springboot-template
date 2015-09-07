@@ -15,7 +15,7 @@ import java.util.Date;
 public class DynamicController {
     @RequestMapping("/date")
     public String date(Model model) {
-        model.addAttribute("date", new Date());
+        model.addAttribute("hello", new Date().toString());
         return "date";
     }
 }

@@ -1,6 +1,6 @@
 package com.github.shenzhang.controller;
 
-import com.github.shenzhang.service.TestService;
+import com.github.shenzhang.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,16 +12,17 @@ import org.springframework.web.bind.annotation.RestController;
  * Time: 11:27 PM
  */
 @RestController
-public class JsonController {
+@RequestMapping("/jpa")
+public class JpaController {
     @Value("${message}")
     private String message;
     @Value("${name}")
     private String name;
     @Autowired
-    private TestService testService;
+    private UserService userService;
 
-    @RequestMapping("/jdbc")
-    public int jdbc() {
-        return testService.getUserCount();
+    @RequestMapping("/count")
+    public long count() {
+        return userService.getUserCount();
     }
 }

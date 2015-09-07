@@ -1,6 +1,6 @@
 package com.github.shenzhang.service;
 
-import com.github.shenzhang.dao.TestDao;
+import com.github.shenzhang.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,11 +10,11 @@ import org.springframework.stereotype.Service;
  * Time: 4:25 PM
  */
 @Service
-public class TestService {
+public class UserService {
     @Autowired
-    private TestDao testDao;
+    private UserRepository userRepository;
 
-    public int getUserCount() {
-        return testDao.getUserCount();
+    public long getUserCount() {
+        return userRepository.count();
     }
 }

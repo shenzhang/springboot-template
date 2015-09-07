@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @SpringApplicationConfiguration(classes = Application.class)
 public class TestServiceIntegrationTest {
     @Autowired
-    private TestService testService;
+    private UserService userService;
 
     @Test
     public void shouldReturnTrue() throws Exception {
