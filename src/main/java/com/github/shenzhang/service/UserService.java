@@ -1,7 +1,5 @@
 package com.github.shenzhang.service;
 
-import com.github.shenzhang.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,10 +9,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserService {
-    @Autowired
-    private UserRepository userRepository;
+//    @Autowired
+//    private UserRepository userRepository;
 
     public long getUserCount() {
-        return userRepository.count();
+        return 0L;
     }
 }
