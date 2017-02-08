@@ -3,9 +3,6 @@ package com.github.shenzhang;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.context.web.SpringBootServletInitializer;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
@@ -15,21 +12,14 @@ import org.springframework.core.env.Environment;
  * Time: 2:13 PM
  */
 
-@ComponentScan
 @SpringBootApplication
-@PropertySource({"classpath:application.properties"})
-public class Application extends SpringBootServletInitializer {
+@PropertySource({"classpath:application.yml"})
+public class Application {
     @Autowired
     private Environment environment;
 
     public static void main(String[] args) throws Exception {
         SpringApplication application = new SpringApplication(Application.class);
         application.run(args);
-    }
-
-
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(Application.class);
     }
 }

@@ -1,23 +1,25 @@
 package com.github.shenzhang.controller;
 
+import com.github.shenzhang.domain.User;
 import com.github.shenzhang.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
- * User: shenzhang
- * Date: 11/5/14
- * Time: 11:27 PM
+ * User: Zhang Shen
+ * Date: 2/8/17
+ * Time: 3:31 PM.
  */
 @RestController
-@RequestMapping("/jpa")
-public class JpaController {
+public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/count")
-    public long count() {
-        return userService.getUserCount();
+    @RequestMapping("/users")
+    public List<User> getUsers() {
+        return userService.getUsers();
     }
 }

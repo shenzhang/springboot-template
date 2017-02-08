@@ -1,10 +1,14 @@
 .DS_Store
 
+
 *.iml
 *.ipr
 *.iws
 
 .gradle
+.vscode
+
+dep.txt
 
 build
 out

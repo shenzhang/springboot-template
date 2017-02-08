@@ -1,6 +1,11 @@
 package com.github.shenzhang.service;
 
+import com.github.shenzhang.annotation.PerformanceLog;
+import com.github.shenzhang.domain.User;
 import org.springframework.stereotype.Service;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * User: shenzhang
@@ -9,10 +14,13 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserService {
-//    @Autowired
-//    private UserRepository userRepository;
+    @PerformanceLog
+    public List<User> getUsers() {
+        User user = new User();
+        user.setId(1);
+        user.setName("fish");
+        user.setAge(32);
 
-    public long getUserCount() {
-        return 0L;
+        return Arrays.asList(user);
     }
 }
