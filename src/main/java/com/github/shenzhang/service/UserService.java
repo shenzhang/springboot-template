@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 /**
  * User: shenzhang
@@ -16,11 +17,15 @@ import java.util.List;
 public class UserService {
     @PerformanceLog
     public List<User> getUsers() {
+        return Arrays.asList(generateRandomUser());
+    }
+
+    @PerformanceLog
+    public User generateRandomUser() {
         User user = new User();
-        user.setId(1);
+        user.setId(new Random().nextInt());
         user.setName("fish");
         user.setAge(32);
-
-        return Arrays.asList(user);
+        return user;
     }
 }

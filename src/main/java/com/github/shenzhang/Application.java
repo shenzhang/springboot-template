@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 /**
  * User: shenzhang
@@ -13,6 +14,7 @@ import org.springframework.core.env.Environment;
  */
 
 @SpringBootApplication
+@EnableWebSecurity
 @PropertySource({"classpath:application.yml"})
 public class Application {
     @Autowired

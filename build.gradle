@@ -1,4 +1,3 @@
-
 allprojects {
     apply plugin: 'idea'
     apply plugin: 'java'
@@ -23,9 +22,9 @@ jar {
 
 buildscript {
     ext {
-        springBootVersion = '1.4.1.RELEASE'
+        springBootVersion = '1.5.5.RELEASE'
     }
-    
+
     repositories {
         maven { url 'http://127.0.0.1:8081/nexus/content/groups/public' }
         jcenter()
@@ -36,23 +35,21 @@ buildscript {
     }
 }
 
-apply plugin: 'spring-boot'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'application'
 
-dependencyManagement {
-    imports {
-        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Camden.RELEASE'
-    }
-}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 dependencies {
     compile(
             'org.springframework.boot:spring-boot-starter-web',
             'org.springframework.boot:spring-boot-starter-aop',
             'org.springframework.boot:spring-boot-starter-actuator',
+            'org.springframework.boot:spring-boot-starter-security',
 
             'com.google.guava:guava:18.0'
     )
-
 
     testCompile(
             'junit:junit:4.11',
@@ -69,15 +66,7 @@ idea.project.ipr {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '3.0'
+    gradleVersion = '3.4'
 }
 
-
-task bootDebug(dependsOn: bootRun) {
-}
-
-gradle.taskGraph.whenReady { taskGraph ->
-    if (taskGraph.hasTask(bootDebug)) {
-        applicationDefaultJvmArgs << '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005'
-    }
-}
+applicationDefaultJvmArgs = ['-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005']
