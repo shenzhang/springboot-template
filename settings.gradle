@@ -1,1 +1,3 @@
 rootProject.name = 'springboot-template'
+
+include 'springboot-api'

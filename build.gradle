@@ -1,65 +1,17 @@
+apply plugin: 'idea'
+
+idea {
+    project {
+        jdkName = '1.8'
+        languageLevel = '1.8'
+    }
+}
+
 allprojects {
-    apply plugin: 'idea'
-    apply plugin: 'java'
-
     repositories {
         maven { url 'http://127.0.0.1:8081/nexus/content/groups/public' }
         jcenter()
     }
-
-    idea {
-        project {
-            jdkName = '1.8'
-            languageLevel = '1.8'
-        }
-    }
-}
-
-jar {
-    baseName = 'myproject'
-    version = '0.0.1-SNAPSHOT'
-}
-
-buildscript {
-    ext {
-        springBootVersion = '1.5.5.RELEASE'
-    }
-
-    repositories {
-        maven { url 'http://127.0.0.1:8081/nexus/content/groups/public' }
-        jcenter()
-    }
-
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-    }
-}
-
-apply plugin: 'org.springframework.boot'
-apply plugin: 'application'
-
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
-dependencies {
-    compile(
-            'org.springframework.boot:spring-boot-starter-web',
-            'org.springframework.boot:spring-boot-starter-aop',
-            'org.springframework.boot:spring-boot-starter-actuator',
-            'org.springframework.boot:spring-boot-starter-security',
-
-            'com.google.guava:guava:18.0'
-    )
-
-    testCompile(
-            'junit:junit:4.11',
-            'org.springframework.boot:spring-boot-starter-test'
-    )
-}
-
-springBoot {
-    buildInfo()
 }
 
 idea.project.ipr {
@@ -73,5 +25,3 @@ idea.project.ipr {
 task wrapper(type: Wrapper) {
     gradleVersion = '3.4'
 }
-
-applicationDefaultJvmArgs = ['-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005']
