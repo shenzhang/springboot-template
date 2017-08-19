@@ -1,4 +1,4 @@
-package com.github.shenzhang.listener;
+package com.github.shenzhang.spring.listener;
 
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;

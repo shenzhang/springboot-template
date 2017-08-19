@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+            function call(url) {
+                $.get(url, function (data) {
+                    alert(JSON.stringify(data));
+                });
+            }
+
+            $('#CORS-health').click(function () {
+                call('http://www.shenzhang.com:8080/health');
+            });
+
+            $('#health').click(function () {
+                call('http://localhost:8080/health');
+            });
+
+            $('#CORS-users').click(function () {
+                call('http://www.shenzhang.com:8080/users');
+            });
+
+            $('#CORS-users1').click(function () {
+                call('http://www.shenzhang.com:8080/users1');
+            });
+
+            $('#CORS-metrics').click(function () {
+                call('http://www.shenzhang.com:8080/metrics');
+            });
+
+            $('#users').click(function () {
+                call('/users');
+            });
+
+            $('#metrics').click(function () {
+                call('/metrics');
+            })
+        });
+    </script>
+
+    <style>
+        div {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <button id="CORS-health">CORS health</button>
+</div>
+<div>
+    <button id="CORS-users">CORS users</button>
+</div>
+<div>
+    <button id="CORS-users1">CORS users1</button>
+</div>
+<div>
+    <button id="CORS-metrics">CORS metrics</button>
+</div>
+<div>
+    <button id="health">health</button>
+</div>
+
+<div>
+    <button id="users">users</button>
+</div>
+
+<div>
+    <button id="metrics">metrics</button>
+</div>
+</body>
+</html>

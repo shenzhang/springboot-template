@@ -3,7 +3,6 @@ package com.github.shenzhang;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
@@ -13,9 +12,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
  * Time: 2:13 PM
  */
 
-@SpringBootApplication
 @EnableWebSecurity
-@PropertySource({"classpath:application.yml"})
+@SpringBootApplication
 public class Application {
     @Autowired
     private Environment environment;
