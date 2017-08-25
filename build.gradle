@@ -7,11 +7,23 @@ idea {
     }
 }
 
-allprojects {
+subprojects {
+    buildscript {
+        repositories {
+            maven { url 'http://127.0.0.1:8081/nexus/content/groups/public' }
+            jcenter()
+        }
+    }
+
     repositories {
         maven { url 'http://127.0.0.1:8081/nexus/content/groups/public' }
         jcenter()
     }
+
+    apply plugin: 'java'
+    apply plugin: 'application'
+
+    sourceCompatibility = 1.8
 }
 
 idea.project.ipr {
@@ -23,5 +35,5 @@ idea.project.ipr {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '3.4'
+    gradleVersion = '4.1'
 }
