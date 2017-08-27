@@ -1,7 +1,7 @@
-package com.github.shenzhang.service;
+package com.shenzhang.springboot.service;
 
-import com.github.shenzhang.annotation.PerformanceLog;
-import com.github.shenzhang.domain.User;
+import com.shenzhang.springboot.annotation.PerformanceLog;
+import com.shenzhang.springboot.domain.User;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;

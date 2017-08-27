@@ -1,4 +1,4 @@
-group = 'io.github.shenzhang.springboot'
+group = 'com.shenzhang.springboot'
 version = '0.0.1-SNAPSHOT'
 
 buildscript {
@@ -12,6 +12,13 @@ buildscript {
 }
 
 apply plugin: 'org.springframework.boot'
+//apply plugin: 'checkstyle'
+//apply plugin: 'findbugs'
+//apply plugin: 'pmd'
+//apply plugin: 'project-report'
+//apply plugin: 'build-dashboard'
+//apply plugin: 'java-gradle-plugin'
+
 
 jar {
     baseName = 'myproject'

@@ -1,4 +1,4 @@
-package com.github.shenzhang.controller;
+package com.shenzhang.springboot.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package com.github.shenzhang.domain;
+package com.shenzhang.springboot.domain;
 
 /**
  * User: Zhang Shen

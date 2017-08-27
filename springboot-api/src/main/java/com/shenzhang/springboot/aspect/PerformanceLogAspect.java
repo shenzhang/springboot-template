@@ -1,4 +1,4 @@
-package com.github.shenzhang.aspect;
+package com.shenzhang.springboot.aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 public class PerformanceLogAspect {
     private static final Logger LOGGER = LoggerFactory.getLogger(PerformanceLogAspect.class);
 
-    @Around("@annotation(com.github.shenzhang.annotation.PerformanceLog)")
+    @Around("@annotation(com.shenzhang.springboot.annotation.PerformanceLog)")
     public Object logPerformance(ProceedingJoinPoint joinPoint) throws Throwable {
         Object value = joinPoint.proceed();
 

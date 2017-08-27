@@ -1,4 +1,4 @@
-package com.github.shenzhang.spring.web;
+package com.shenzhang.springboot.spring.web;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

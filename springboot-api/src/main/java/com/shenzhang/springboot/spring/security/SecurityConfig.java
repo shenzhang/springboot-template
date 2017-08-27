@@ -1,4 +1,4 @@
-package com.github.shenzhang.spring.security;
+package com.shenzhang.springboot.spring.security;
 
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Configuration;

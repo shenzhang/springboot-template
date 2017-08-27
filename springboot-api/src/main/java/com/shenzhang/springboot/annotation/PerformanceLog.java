@@ -1,4 +1,4 @@
-package com.github.shenzhang.annotation;
+package com.shenzhang.springboot.annotation;
 
 /**
  * User: Zhang Shen
